@@ -1,0 +1,4 @@
+{
+	"_comment": "mode must be electron or browser",
+	"mode": "electron"
+}

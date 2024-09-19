@@ -1,0 +1,10 @@
+.DS_Store
+
+node_modules
+yarn.lock
+
+dist/
+dist/assets
+dist/bundle.js
+dist/main.js
+dist/index.html

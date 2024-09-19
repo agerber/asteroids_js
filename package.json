@@ -1,0 +1,26 @@
+{
+	"name": "asteroids_js",
+	"version": "1.0.0",
+	"main": "index.js",
+	"devDependencies": {
+		"@types/howler": "^2.2.11",
+		"electron": "^32.1.0",
+		"file-loader": "^6.2.0",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.6.2",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.1.0"
+	},
+	"scripts": {
+        "install": "yarn install",
+        "clean": "rm -rf ./dist",
+		"build": "mkdir ./dist && cp ./_index.html ./dist/index.html && webpack --config webpack.config.js && webpack --config webpack.electron.config.js",
+		"start": "node src/run.js",
+		"start:electron": "yarn clean && yarn build && electron ./dist/main.js",
+		"start:browser": "yarn clean && yarn build && webpack serve --config webpack.config.js"
+	},
+	"dependencies": {
+		"howler": "^2.2.4"
+	}
+}
