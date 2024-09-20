@@ -14,8 +14,6 @@ export class Asteroid extends Sprite {
 
 	// Overloading in Typescript is possible by checking the type of the argument
 	// Multiple constructors are not allowed
-	constructor(size: number);
-	constructor(arg: number | Asteroid);
 	constructor(arg: number | Asteroid) {
 		super();
 		if (typeof arg === "number") {
@@ -83,11 +81,11 @@ export class Asteroid extends Sprite {
 
 		const VERTICES = Math.floor(Math.random() * 7) + 25;
 
-		const points = Array.from({ length: VERTICES })
+		return  Array.from({ length: VERTICES })
 			.map(() => polarPointSupplier())
 			.sort((pp1, pp2) => pp1.compareTheta(pp2))
 			.map(polarToCartesian);
-		return points;
+
 	}
 
 	public draw(g: CanvasRenderingContext2D): void {
