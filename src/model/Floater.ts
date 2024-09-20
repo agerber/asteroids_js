@@ -28,7 +28,7 @@ export abstract class Floater extends Sprite {
 		this.setCartesians(listPoints);
 	}
 
-	draw(g: CanvasRenderingContext2D): void {
+	protected override draw(g: CanvasRenderingContext2D): void {
 		this.renderVector(g);
 	}
 }

@@ -20,26 +20,26 @@ export class Star implements Movable {
             ${Math.floor(Math.random() * 226)})`;
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		g.strokeStyle = this.color;
 		g.beginPath();
 		g.arc(this.getCenter().getX(), this.getCenter().getY(), this.getRadius(), 0, Math.PI * 2);
 		g.stroke();
 	}
 
-	public getCenter(): Point {
+	public override getCenter(): Point {
 		return this.center;
 	}
 
-	public getRadius(): number {
+	public override getRadius(): number {
 		return 1;
 	}
 
-	public getTeam(): Team {
+	public override getTeam(): Team {
 		return Team.DEBRIS;
 	}
 
-	public move(): void {
+	public override move(): void {
 		if (!CommandCenter.getInstance().isFalconPositionFixed()) return;
 
 		if (this.center.getX() > Game.DIM.getWidth()) {
@@ -56,11 +56,11 @@ export class Star implements Movable {
 		}
 	}
 
-	public addToGame(list: LinkedList<Movable>): void {
+	public override addToGame(list: LinkedList<Movable>): void {
 		list.add(this);
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		list.remove(this);
 	}
 }

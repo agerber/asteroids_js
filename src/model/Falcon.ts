@@ -56,7 +56,7 @@ export class Falcon extends Sprite {
 		this.setRasterMap(rasterMap);
 	}
 
-	public move(): void {
+	public override move(): void {
 		if (!CommandCenter.getInstance().isFalconPositionFixed()) {
 			super.move();
 		}
@@ -104,7 +104,7 @@ export class Falcon extends Sprite {
 		this.setOrientation(adjustOr);
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		if (this.nukeMeter > 0) {
 			this.drawNukeHalo(g);
 		}
@@ -140,7 +140,7 @@ export class Falcon extends Sprite {
 		g.stroke();
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		if (this.shield === 0) {
 			this.decrementFalconNumAndSpawn();
 		}

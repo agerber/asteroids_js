@@ -32,7 +32,7 @@ export class WhiteCloudDebris extends Sprite {
 		this.setRadius(Math.floor(explodingSprite.getRadius() * 1.32));
 	}
 
-	draw(g: CanvasRenderingContext2D): void {
+    public override draw(g: CanvasRenderingContext2D): void {
 		this.renderRaster(g, this.getRasterMap().get(this.index));
 		if (this.getExpiry() % WhiteCloudDebris.SLOW_MO === 0) {
 			this.index++;

@@ -17,7 +17,7 @@ export class NukeFloater extends Floater {
 		this.setExpiry(120);
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		super.removeFromGame(list);
 
 		if (this.getExpiry() > 0) {

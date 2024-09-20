@@ -24,11 +24,11 @@ export class MiniMap extends Sprite {
 		this.setCenter(new Point(0, 0));
 	}
 
-	public move(): void {
+	public override move(): void {
 		// Minimap is fixed
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		if (!CommandCenter.getInstance().isRadar()) return;
 
 		this.aspectRatio = this.aspectAdjustedRatio(CommandCenter.getInstance().getUniDim());

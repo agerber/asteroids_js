@@ -28,14 +28,14 @@ export class Nuke extends Sprite {
 		this.setDeltaY(falcon.getDeltaY() + vectorY);
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		g.strokeStyle = this.getColor();
 		g.beginPath();
 		g.arc(this.getCenter().getX(), this.getCenter().getY(), this.getRadius(), 0, Math.PI * 2);
 		g.stroke();
 	}
 
-	public move(): void {
+	public override  move(): void {
 		super.move();
 		if (this.getExpiry() % (Nuke.EXPIRE / 6) === 0) {
 			this.nukeState++;
@@ -74,7 +74,7 @@ export class Nuke extends Sprite {
     being added to or removed from the game).
 
       */
-	public addToGame(list: LinkedList<Movable>): void {
+	public override addToGame(list: LinkedList<Movable>): void {
 		if (CommandCenter.getInstance().getFalcon().getNukeMeter() > 0) {
 			list.add(this);
 			SoundLoader.playSound("nuke.wav");
@@ -82,7 +82,7 @@ export class Nuke extends Sprite {
 		}
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		if (this.getExpiry() === 0) {
 			list.remove(this);
 		}

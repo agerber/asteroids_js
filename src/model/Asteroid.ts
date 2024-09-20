@@ -88,11 +88,11 @@ export class Asteroid extends Sprite {
 
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		this.renderVector(g);
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		super.removeFromGame(list);
 		this.spawnSmallerAsteroidsOrDebris();
 		CommandCenter.getInstance().setScore(CommandCenter.getInstance().getScore() + 10 * (this.getSize() + 1));

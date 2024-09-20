@@ -35,11 +35,11 @@ export class Bullet extends Sprite {
 		this.setCartesians(listPoints);
 	}
 
-	public draw(g: CanvasRenderingContext2D): void {
+	public override draw(g: CanvasRenderingContext2D): void {
 		this.renderVector(g);
 	}
 
-	public addToGame(list: LinkedList<Movable>): void {
+	public override addToGame(list: LinkedList<Movable>): void {
 		super.addToGame(list);
 		SoundLoader.playSound("thump.wav");
 	}

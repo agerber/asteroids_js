@@ -48,7 +48,7 @@ export abstract class Sprite implements Movable {
    (inherited from Movable) is passed to Sprite's subclasses which must satisfy the contract by providing implementations for draw(), and this will depend on whether the
    subclass renders as raster or vector.
 */
-	public move(): void {
+	public override move(): void {
 		// Keeps the sprite inside the bounds of the game
 		const scalarX = CommandCenter.getInstance().getUniDim().getWidth();
 		const scalarY = CommandCenter.getInstance().getUniDim().getHeight();
@@ -139,11 +139,11 @@ export abstract class Sprite implements Movable {
 		Utils.drawPolygonFromPoints(g, adjustedCarts, this.color);
 	}
 
-	public addToGame(list: LinkedList<Movable>): void {
+	public override addToGame(list: LinkedList<Movable>): void {
 		list.add(this);
 	}
 
-	public removeFromGame(list: LinkedList<Movable>): void {
+	public override removeFromGame(list: LinkedList<Movable>): void {
 		list.remove(this);
 	}
 }
