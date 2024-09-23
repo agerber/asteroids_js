@@ -39,8 +39,6 @@ export abstract class Sprite implements Movable {
 		this.color = "white";
 	}
 
-	// Abstract method would require the subclass to implement its own draw method
-	abstract draw(g: CanvasRenderingContext2D): void;
 
     /* TODO The following methods are an example of the Template_Method design pattern. The Sprite class provides
     the common framework for Movable, such as move(), expire(), somePosNegValue(), renderRaster(), renderVector(), etc.

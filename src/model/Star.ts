@@ -14,11 +14,10 @@ export class Star implements Movable {
 			Math.floor(Math.random() * Game.DIM.getWidth()),
 			Math.floor(Math.random() * Game.DIM.getHeight())
 		);
-		this.color = `rgb(
-            ${Math.floor(Math.random() * 226)}, 
-            ${Math.floor(Math.random() * 226)}, 
-            ${Math.floor(Math.random() * 226)})`;
-	}
+        let num = Math.floor(Math.random() * 256);
+        this.color = `rgb(${num}, ${num}, ${num})`;
+
+    }
 
 	public override draw(g: CanvasRenderingContext2D): void {
 		g.strokeStyle = this.color;
